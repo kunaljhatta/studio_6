@@ -77,91 +77,63 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+  
    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 115, 162, 255), 
       appBar: AppBar(
         title: const Text('Weather App'),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Location',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        'City: ${location["city"]}',
-                        style: const TextStyle(fontSize: 22, color: Colors.black), 
-                      ),
-                      Text(
-                        'State: ${location["state"]}',
-                        style: const TextStyle(fontSize: 22, color: Colors.black),
-                      ),
-                      Text(
-                        'Zip: ${location["zip"]}',
-                        style: const TextStyle(fontSize: 22, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[100],
               ),
-              const SizedBox(height: 16),
-              Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Current Weather Forecast',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        'Temperature: ${forecast["temperature"]}°F',
-                        style: const TextStyle(fontSize: 22, color: Colors.black),
-                      ),
-                      Text(
-                        'Detailed Forecast: ${forecast["detailedForecast"]}',
-                        style: const TextStyle(fontSize: 22, color: Colors.black), 
-                      ),
-                      Text(
-                        'Wind Speed/Direction: ${forecast["windSpeed"]} mph ${forecast["windDirection"]}',
-                        style: const TextStyle(fontSize: 22, color: Colors.black), 
-                      ),
-                    ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Location',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
-                ),
+                  const SizedBox(height: 8),
+                  Text('City: ${location["city"]}'),
+                  Text('State: ${location["state"]}'),
+                  Text('Zip: ${location["zip"]}'),
+                ],
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[100],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Current Weather Forecast',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text('Temperature: ${forecast["temperature"]}°F'),
+                  Text('Detailed Forecast: ${forecast["detailedForecast"]}'),
+                  Text(
+                    'Wind Speed/Direction: ${forecast["windSpeed"]} mph ${forecast["windDirection"]}',
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
